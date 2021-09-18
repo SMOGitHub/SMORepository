@@ -1,0 +1,126 @@
+algoritmo "ExCEV"
+// Função : Mostrar as resoluções de exercicios
+// Autor : SMO
+// Data : 17/09/2021
+// Seção de Declarações 
+var
+   exercicioEscolhido: caractere
+   tituloEscolhido: caractere
+   tituloResultado: caractere
+   tituloRetornando: caractere
+   
+   //Exercício 1
+   procedimento Exercicio1()
+   var
+   inicio
+      escreval("Olá, Mundo!")
+   fimprocedimento
+
+   //Exercício 2
+   procedimento Exercicio2()
+   var
+      nome: caractere
+   inicio
+      escreva("Qual é o seu nome? ")
+      leia(nome)
+      escreval("Olá ", nome, ", é um prazer te conhecer!")
+   fimprocedimento
+
+   //Exercício 3
+   procedimento Exercicio3()
+   var
+      nome: caractere
+      salario: real
+   inicio
+      escreva("Nome do Funcionário: ")
+      leia(nome)
+      escreva("Salário: ")
+      leia(salario)
+      escreval("O funcionário ", nome, " tem um salário de R$", salario:1:2, " em Junho.")
+   fimprocedimento
+   
+   //Exercício 4
+   procedimento Exercicio4()
+   var
+      num1, num2: inteiro
+   inicio
+      escreva("Digite um valor: ")
+      leia(num1)
+      escreva("Digite outro valor: ")
+      leia(num2)
+      escreval("A soma entre", num1," e", num2, " é igual a", num1 + num2, ".")
+   fimprocedimento
+   
+   //Usando uma maneira mais bonita para pular linhas
+   procedimento PularLinha()
+   var
+   inicio
+         escreval("")
+   fimprocedimento
+inicio
+      tituloEscolhido := "EXERCÍCIO ESCOLHIDO:"
+      tituloResultado := "RESULTADO:"
+      tituloRetornando := "<< RETORNANDO AO PROGRAMA PRINCIPAL >>"
+      repita
+            escreval("---------------------------------------------------")
+            escreval("             EXERCÍCIOS CURSO EM VÍDEO             ")
+            escreval("---------------------------------------------------")
+            escreva("Digite um número entre 1 e 100 para continuar ")
+            escreva("ou 0 (zero) para encerrar: ")
+            leia(exercicioEscolhido)
+            PularLinha()
+            escolha exercicioEscolhido
+               caso "0"
+                    escreval("ENCERRANDO PROGRAMA...")
+               caso "1"
+                    escreval(tituloEscolhido)
+                    escreval("1) Escreva um programa que mostre na tela a mensagem 'Olá, Mundo!'")
+                    PularLinha()
+                    escreval(tituloResultado)
+                    Exercicio1()
+                    PularLinha()
+                    escreval(tituloRetornando)
+               caso "2"
+                    escreval(tituloEscolhido)
+                    escreval("2) Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boas ")
+                    escreval("vindas para ela:")
+                    escreval("Ex:")
+                    escreval("Qual é o seu nome? João da Silva")
+                    escreval("Olá João da Silva, é um prazer te conhecer!")
+                    PularLinha()
+                    escreval(tituloResultado)
+                    Exercicio2()
+                    PularLinha()
+                    escreval(tituloRetornando)
+               caso "3"
+                    escreval(tituloEscolhido)
+                    escreval("3) Crie um programa que leia o nome e o salário de um funcionário, mostrando no ")
+                    escreval("final uma mensagem.")
+                    escreval("Ex:")
+                    escreval("Nome do Funcionário: Maria do Carmo")
+                    escreval("Salário: 1850,45")
+                    escreval("O funcionário Maria do Carmo tem um salário de R$1850,45 em Junho.")
+                    PularLinha()
+                    escreval(tituloResultado)
+                    Exercicio3()
+                    PularLinha()
+                    escreval(tituloRetornando)
+               caso "4"
+                    escreval(tituloEscolhido)
+                    escreval("4) Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório ")
+                    escreval("entre eles.")
+                    escreval("Ex:")
+                    escreval("Digite um valor: 8")
+                    escreval("Digite outro valor: 5")
+                    escreval("A soma entre 8 e 5 é igual a 13.")
+                    PularLinha()
+                    escreval(tituloResultado)
+                    Exercicio4()
+                    PularLinha()
+                    escreval(tituloRetornando)
+               outrocaso
+                    escreval("Número inválido, por favor tente novamente.")
+               fimescolha
+      escreval("")
+      ate (exercicioEscolhido = "0")
+fimalgoritmo
