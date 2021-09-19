@@ -1,0 +1,124 @@
+algoritmo "JogoDaVelha"
+// Função : Recriar o jogo da velha
+// Autor : SMO
+// Data : 18/09/2021
+// Seção de Declarações 
+var
+  lacunas: vetor[1..3, 1..3] de caractere
+  cont, lacunaEscolhida, i, j: inteiro
+  simbolo, status: caractere
+  
+  funcao EscolherLacuna(escolhido: caractere): logico
+  var
+     k, m: inteiro
+     encontrado: logico
+     tentarNovamente: caractere
+  inicio
+        encontrado <- FALSO
+        se (escolhido = "0") entao
+           status <- "F" // Empate forçado
+           encontrado <- VERDADEIRO
+        senao
+           para k de 1 ate 3 faca
+             para m de 1 ate 3 faca
+               se (lacunas[k,m] = escolhido) entao
+                  encontrado <- VERDADEIRO
+                  lacunas[k,m] <- simbolo
+                  verificarFimDeJogo()
+               fimse
+             fimpara
+           fimpara
+        fimse
+        
+        se nao encontrado entao
+           escreval("Jogada inválida, tente novamente! Aperte ENTER para continuar.")
+           leia(tentarNovamente)
+        fimse
+        retorne encontrado
+  fimfuncao
+  
+  procedimento verificarFimDeJogo()
+  var
+     k, m: inteiro
+     empate: logico
+  inicio
+        //Verificando a vitória na vertical e horizontal
+        para k de 1 ate 3 faca
+             se (lacunas[k,1] = lacunas[k,2]) e (lacunas[k,2] = lacunas[k,3]) ou (lacunas[1,k] = lacunas[2,k]) e (lacunas[2,k] = lacunas[3,k]) entao
+                status <- "V" //Vitória do símbolo atual
+             fimse
+        fimpara
+        //Verificando a vitória nas diagonais
+        se (status = "") e ((lacunas[1,1] = lacunas[2,2]) e (lacunas[2,2] = lacunas[3,3]) ou (lacunas[1,3] = lacunas[2,2]) e (lacunas[2,2] = lacunas[3,1])) entao
+           status <- "V" //Vitória do símbolo atual
+        fimse
+        //Verificando empate
+        empate <- FALSO
+        se (status = "") entao
+           empate <- VERDADEIRO
+           para k de 1 ate 3 faca
+             para m de 1 ate 3 faca
+               se (lacunas[k,m] <> "X") e (lacunas[k,m] <> "O") entao
+                  empate <- FALSO
+               fimse
+             fimpara
+          fimpara
+        fimse
+        se empate entao
+           status <- "E" //Empate por falta de lacunas
+        fimse
+  fimprocedimento
+
+  procedimento redesenharTabuleiro()
+  var
+  inicio
+      LimpaTela
+      escreval("+---+---+---+")
+      escreval("| ", lacunas[1,1], " | ", lacunas[1,2], " | ", lacunas[1,3], " |")
+      escreval("+---+---+---+")
+      escreval("| ", lacunas[2,1], " | ", lacunas[2,2], " | ", lacunas[2,3], " |")
+      escreval("+---+---+---+")
+      escreval("| ", lacunas[3,1], " | ", lacunas[3,2], " | ", lacunas[3,3], " |")
+      escreval("+---+---+---+")
+  fimprocedimento
+
+inicio
+// Seção de Comandos
+cont <- 0
+simbolo <- "X"
+status <- ""
+para i de 1 ate 3 faca
+     para j de 1 ate 3 faca
+          cont <- cont + 1
+          lacunas[i,j] <- numpcarac(cont)
+     fimpara
+fimpara
+repita
+      redesenharTabuleiro()
+      escreval()
+      escreval("Vai jogar [", simbolo, "] em qual posição?")
+      leia(lacunaEscolhida)
+      se (EscolherLacuna(numpcarac(lacunaEscolhida))) e (status = "") entao
+            se (simbolo = "X") entao
+                 simbolo <- "O"
+            senao
+                 simbolo <- "X"
+            fimse
+      fimse
+      escreva(lacunaEscolhida)
+      se (numpcarac(lacunaEscolhida) = "draw") entao
+         status <- "E"
+      fimse
+ate status <> ""
+redesenharTabuleiro()
+escreval()
+se status = "V" entao
+   escreval("Fim de jogo, vitória do [", simbolo,"]!")
+senao
+   se (status = "F") entao
+      escreval("Fim de jogo, empate forçado!")
+   senao
+      escreval("Fim de jogo, deu velha!")
+   fimse
+fimse
+fimalgoritmo
