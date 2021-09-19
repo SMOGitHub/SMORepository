@@ -39,7 +39,7 @@ var
       escreval("O funcionário ", nome, " tem um salário de R$", salario:1:2, " em Junho.")
    fimprocedimento
    
-   //Exercício 4
+  //Exercício 4
    procedimento Exercicio4()
    var
       num1, num2: inteiro
@@ -51,20 +51,256 @@ var
       escreval("A soma entre", num1," e", num2, " é igual a", num1 + num2, ".")
    fimprocedimento
    
+   //Exercício 5
+   procedimento Exercicio5()
+   var
+      nota1, nota2, media: real
+   inicio
+      escreva("Nota 1: ")
+      leia(nota1)
+      escreva("Nota 2: ")
+      leia(nota2)
+      media <- (nota1 + nota2) / 2
+      escreval("A média entre ", nota1:2:1, " e ", nota2:2:1, " é igual a ", media:2:1)
+   fimprocedimento
+   
+   //Exercício 6
+   procedimento Exercicio6()
+   var
+      num: inteiro
+   inicio
+      escreva("Digite um número: ")
+      leia(num)
+      escreval("O antecessor de", num, " é", num-1)
+      escreval("O sucessor de", num, " é", num+1)
+   fimprocedimento
+   
+   //Exercício 7
+   procedimento Exercicio7()
+   var
+      num: real
+   inicio
+      escreva("Digite um número: ")
+      leia(num)
+      escreval("O dobro de ", num, " é ", 2 * num:2:1)
+      escreval("A terça parte de ", num, " é ", 1/3 * num:2:5)
+   fimprocedimento
+   
+   //Exercício 8
+   procedimento Exercicio8()
+   var
+      //As variáveis "comprimento" e "espacos" são usadas para calcular a
+      //distância correta entre uma coluna e outra e não são necessárias
+      //para a realização do exercício
+      distancia, comprimento: real
+      espacos: caractere
+   inicio
+      espacos <- "                    "
+      escreva("Digite uma distância em metros: ")
+      leia(distancia)
+      escreval("A distância de ", distancia:2:1, "m corresponde a:")
+      comprimento <- compr(numpcarac(1 / 1000 * distancia))
+      escreva(1 / 1000 * distancia, "Km")
+      escreval(copia(espacos, 1, 20 - comprimento), 10 * distancia, "dm")
+      comprimento <- compr(numpcarac(1 / 100 * distancia))
+      escreva(1 / 100 * distancia, "Hm")
+      escreval(copia(espacos, 1, 20 - comprimento), 100 * distancia, "cm")
+      comprimento <- compr(numpcarac(1 / 10 * distancia))
+      escreva(1 / 10 * distancia, "Dam")
+      escreval(copia(espacos, 1, 19 - comprimento), 1000 * distancia, "mm")
+   fimprocedimento
+   
+   //Exercício 9
+   procedimento Exercicio9()
+   var
+      dinheiro: real
+   inicio
+      escreva("Digite o valor do seu salário: R$")
+      leia(dinheiro)
+      escreval("Seu salário vale, em dólares: US$", 1 / 3.45 * dinheiro:3:2)
+   fimprocedimento
+   
+   //Exercício 10
+   procedimento Exercicio10()
+   var
+      largura, altura, area: real
+   inicio
+      escreva("Escreva a largura da parede em metros: ")
+      leia(largura)
+      escreva("Escreva a altura da parede em metros: ")
+      leia(altura)
+      area <- largura * altura
+      escreval("A área da parede é de ", area:2:1, " metros quadrados.")
+      escreval("A quantidade de tinta necessária para pintar essa parede é de ", 1/2 * area:2:1, "L")
+   fimprocedimento
+   
+   //Exercício 11
+   procedimento Exercicio11()
+   var
+      valorA, valorB, valorC, delta: real
+   inicio
+      escreva("Digite o valor de A: ")
+      leia(valorA)
+      escreva("Digite o valor de B: ")
+      leia(valorB)
+      escreva("Digite o valor de C: ")
+      leia(valorC)
+      delta <- valorB^2 - 4 * valorA * valorC
+      escreval("O valor de Delta para esta equação é:", delta)
+   fimprocedimento
+
+   //Exercício 12
+   procedimento Exercicio12()
+   var
+      preco: real
+   inicio
+      escreva("Digite o preço do produto: R$")
+      leia(preco)
+      escreval("O valor do produto com 5% de desconto é: R$", 0.95 * preco:3:2)
+   fimprocedimento
+   
+   //Exercício 13
+   procedimento Exercicio13()
+   var
+      preco: real
+   inicio
+      escreva("Digite o salário do funcionário: R$")
+      leia(preco)
+      escreval("O salário desse funcionário com 15% de aumento é: R$", 1.15 * preco:3:2)
+   fimprocedimento
+   
+   //Exercício 14
+   procedimento Exercicio14()
+   var
+      kilometros, dias: real
+   inicio
+      escreva("Quantos KM foram percorridos pelo carro? ")
+      leia(kilometros)
+      escreva("Por quantos dias o carro foi alugado? ")
+      leia(dias)
+      escreval("O valor a ser cobrado do cliente é de: R$", (90 * dias  + 0.2 * kilometros):3:2)
+   fimprocedimento
+   
+   //Exercício 15
+   procedimento Exercicio15()
+   var
+      dias: real
+   inicio
+      escreva("Dias de trabalho: ")
+      leia(dias)
+      escreval("Salário do funcionário: R$", 25 * 8 * dias:3:2)
+   fimprocedimento
+   
+   //Exercício 16
+   procedimento Exercicio16()
+   var
+      cigarros, anos: real
+   inicio
+      escreva("Quantos cigarros são fumados por dia? ")
+      leia(cigarros)
+      escreva("A quantos é um fumante? ")
+      leia(anos)
+      escreval("O tempo de vida perdido por fumar é de ", (anos * 365 * cigarros * 10 / (60 * 24)):2:1, " dias")
+   fimprocedimento
+   
+   //Exercício 17
+   procedimento Exercicio17()
+   var
+      velocidade: real
+   inicio
+      escreva("Digite a velocidade do carro (em km/h): ")
+      leia(velocidade)
+      se (velocidade > 80) entao
+         escreval("O motorista deve ser multado em R$", ((velocidade - 80)*5):3:2)
+      senao
+         escreval("O motorista está dentro do limite permitido de velocidade.")
+      fimse
+   fimprocedimento
+   
+   //Exercício 18
+   procedimento Exercicio18()
+   var
+      ano: real
+   inicio
+      escreva("Digite o ano de nascimento do usuário: ")
+      leia(ano)
+      se (2021 - ano >= 16) entao
+         escreval("O usuário já pode votar.")
+      senao
+         escreval("O usuário ainda não pode votar.")
+      fimse
+   fimprocedimento
+   
+   //Exercício 19
+   procedimento Exercicio19()
+   var
+      nome: caractere
+      nota1, nota2, media: real
+   inicio
+      escreva("Nome do aluno: ")
+      leia(nome)
+      escreva("Nota 1 (0-10): ")
+      leia(nota1)
+      escreva("Nota 2 (0-10): ")
+      leia(nota2)
+      media <- (nota1 + nota2)/2
+      escreval("Média: ", media:2:1)
+      se (media >= 7) entao
+         escreval("O aluno ", nome, " foi aprovado.")
+      senao
+         escreval("O aluno ", nome, " foi reprovado.")
+      fimse
+   fimprocedimento
+   
+   //Exercício 20
+   procedimento Exercicio20()
+   var
+      num: inteiro
+   inicio
+      escreva("Digite um número inteiro: ")
+      leia(num)
+      se (num % 2 = 0) entao
+         escreval("O número", num," é par.")
+      senao
+         escreval("O número", num," é ímpar.")
+      fimse
+   fimprocedimento
+   
    //Usando uma maneira mais bonita para pular linhas
    procedimento PularLinha()
    var
    inicio
          escreval("")
    fimprocedimento
+   
+   //Escrevendo título antes do resultado
+   procedimento EscrevaTituloResultado():
+   var
+   inicio
+         PularLinha()
+         escreval(tituloResultado)
+   fimprocedimento
+
+   //Escrevendo título antes de voltar ao programa principal
+   procedimento EscrevaTituloRetornando():
+   var
+      resposta: caractere
+   inicio
+         PularLinha()
+         escreva("Aperte ENTER para continuar.")
+         leia(resposta)
+         escreva(tituloRetornando)
+         LimpaTela
+   fimprocedimento
+
 inicio
       tituloEscolhido := "EXERCÍCIO ESCOLHIDO:"
       tituloResultado := "RESULTADO:"
       tituloRetornando := "<< RETORNANDO AO PROGRAMA PRINCIPAL >>"
       repita
-            escreval("---------------------------------------------------")
-            escreval("             EXERCÍCIOS CURSO EM VÍDEO             ")
-            escreval("---------------------------------------------------")
+            escreval("-----------------------------------------------------------------------------")
+            escreval("                          EXERCÍCIOS CURSO EM VÍDEO                          ")
+            escreval("-----------------------------------------------------------------------------")
             escreva("Digite um número entre 1 e 100 para continuar ")
             escreva("ou 0 (zero) para encerrar: ")
             leia(exercicioEscolhido)
@@ -75,52 +311,181 @@ inicio
                caso "1"
                     escreval(tituloEscolhido)
                     escreval("1) Escreva um programa que mostre na tela a mensagem 'Olá, Mundo!'")
-                    PularLinha()
-                    escreval(tituloResultado)
+                    EscrevaTituloResultado()
                     Exercicio1()
-                    PularLinha()
-                    escreval(tituloRetornando)
+                    EscrevaTituloRetornando()
                caso "2"
                     escreval(tituloEscolhido)
-                    escreval("2) Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boas ")
+                    escreval("2) Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boas")
                     escreval("vindas para ela:")
                     escreval("Ex:")
                     escreval("Qual é o seu nome? João da Silva")
                     escreval("Olá João da Silva, é um prazer te conhecer!")
-                    PularLinha()
-                    escreval(tituloResultado)
+                    EscrevaTituloResultado()
                     Exercicio2()
-                    PularLinha()
-                    escreval(tituloRetornando)
+                    EscrevaTituloRetornando()
                caso "3"
                     escreval(tituloEscolhido)
-                    escreval("3) Crie um programa que leia o nome e o salário de um funcionário, mostrando no ")
+                    escreval("3) Crie um programa que leia o nome e o salário de um funcionário, mostrando no")
                     escreval("final uma mensagem.")
                     escreval("Ex:")
                     escreval("Nome do Funcionário: Maria do Carmo")
                     escreval("Salário: 1850,45")
                     escreval("O funcionário Maria do Carmo tem um salário de R$1850,45 em Junho.")
-                    PularLinha()
-                    escreval(tituloResultado)
+                    EscrevaTituloResultado()
                     Exercicio3()
-                    PularLinha()
-                    escreval(tituloRetornando)
+                    EscrevaTituloRetornando()
                caso "4"
                     escreval(tituloEscolhido)
-                    escreval("4) Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório ")
+                    escreval("4) Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório")
                     escreval("entre eles.")
                     escreval("Ex:")
                     escreval("Digite um valor: 8")
                     escreval("Digite outro valor: 5")
                     escreval("A soma entre 8 e 5 é igual a 13.")
-                    PularLinha()
-                    escreval(tituloResultado)
+                    EscrevaTituloResultado()
                     Exercicio4()
-                    PularLinha()
-                    escreval(tituloRetornando)
+                    EscrevaTituloRetornando()
+               caso "5"
+                    escreval(tituloEscolhido)
+                    escreval("5) Faça um programa que leia as duas notas de um aluno em uma matéria e mostre")
+                    escreval("na tela a sua média na disciplina.")
+                    escreval("Ex:")
+                    escreval("Nota 1: 4.5")
+                    escreval("Nota 2: 8.5")
+                    escreval("A média entre 4.5 e 8.5 é igual a 6.5")
+                    EscrevaTituloResultado()
+                    Exercicio5()
+                    EscrevaTituloRetornando()
+               caso "6"
+                    escreval(tituloEscolhido)
+                    escreval("6) Faça um programa que leia um número inteiro e mostre o seu antecessor e seu")
+                    escreval("sucessor.")
+                    escreval("Ex:")
+                    escreval("Digite um número: 9")
+                    escreval("O antecessor de 9 é 8")
+                    escreval("O sucessor de 9 é 10")
+                    EscrevaTituloResultado()
+                    Exercicio6()
+                    EscrevaTituloRetornando()
+               caso "7"
+                    escreval(tituloEscolhido)
+                    escreval("7) Crie um algoritmo que leia um número real e mostre na tela o seu dobro e a")
+                    escreval("sua terça parte.")
+                    escreval("Ex:")
+                    escreval("Digite um número: 3.5")
+                    escreval("O dobro de 3.5 é 7.0")
+                    escreval("A terça parte de 3.5 é 1.16666")
+                    EscrevaTituloResultado()
+                    Exercicio7()
+                    EscrevaTituloRetornando()
+               caso "8"
+                    escreval(tituloEscolhido)
+                    escreval("8) Desenvolva um programa que leia uma distância em metros e mostre os valores")
+                    escreval("relativos em outras medidas.")
+                    escreval("Ex:")
+                    escreval("Digite uma distância em metros: 185.72")
+                    escreval("A distância de 85.7m corresponde a:")
+                    escreval("0.18572Km       1857.2dm")
+                    escreval("1.8572Hm        18572.0cm")
+                    escreval("18.572Dam       185720.0mm")
+                    EscrevaTituloResultado()
+                    Exercicio8()
+                    EscrevaTituloRetornando()
+               caso "9"
+                    escreval(tituloEscolhido)
+                    escreval("9) Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$)")
+                    escreval("e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45.")
+                    EscrevaTituloResultado()
+                    Exercicio9()
+                    EscrevaTituloRetornando()
+               caso "10"
+                    escreval(tituloEscolhido)
+                    escreval("10) Faça um algoritmo que leia a largura e altura de uma parede, calcule e")
+                    escreval("mostre a área a ser pintada e a quantidade de tinta necessária para o serviço,")
+                    escreval("sabendo que cada litro de tinta pinta uma área de 2metros quadrados.")
+                    EscrevaTituloResultado()
+                    Exercicio10()
+                    EscrevaTituloRetornando()
+               caso "11"
+                    escreval(tituloEscolhido)
+                    escreval("11) Desenvolva uma lógica que leia os valores de A, B e C de uma equação do")
+                    escreval("segundo grau e mostre o valor de Delta.")
+                    EscrevaTituloResultado()
+                    Exercicio11()
+                    EscrevaTituloRetornando()
+               caso "12"
+                    escreval(tituloEscolhido)
+                    escreval("12) Crie um programa que leia o preço de um produto, calcule e mostre o seu")
+                    escreval("PREÇO PROMOCIONAL, com 5% de desconto.")
+                    EscrevaTituloResultado()
+                    Exercicio12()
+                    EscrevaTituloRetornando()
+               caso "13"
+                    escreval(tituloEscolhido)
+                    escreval("13) Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o")
+                    escreval("seu novo salário, com 15% de aumento.")
+                    EscrevaTituloResultado()
+                    Exercicio13()
+                    EscrevaTituloRetornando()
+               caso "14"
+                    escreval(tituloEscolhido)
+                    escreval("14) A locadora de carros precisa da sua ajuda para cobrar seus serviços. Escreva")
+                    escreval("um programa que pergunte a quantidade de Km percorridos por um carro alugado e a")
+                    escreval("quantidade de dias pelos quais ele foi alugado. Calcule o preço total a pagar,")
+                    escreval("sabendo que o carro custa R$90 por dia e R$0,20 por Km rodado.")
+                    EscrevaTituloResultado()
+                    Exercicio14()
+                    EscrevaTituloRetornando()
+               caso "15"
+                    escreval(tituloEscolhido)
+                    escreval("15) Crie um programa que leia o número de dias trabalhados em um mês e mostre o")
+                    escreval("salário de um funcionário, sabendo que ele trabalha 8 horas por dia e ganha R$25")
+                    escreval("por hora trabalhada.")
+                    EscrevaTituloResultado()
+                    Exercicio15()
+                    EscrevaTituloRetornando()
+               caso "16"
+                    escreval(tituloEscolhido)
+                    escreval("16) [DESAFIO] Escreva um programa para calcular a redução do tempo de vida de um")
+                    escreval("fumante. Pergunte a quantidade de cigarros fumados por dias e quantos anos ele")
+                    escreval("já fumou. Considere que um fumante perde 10 min de vida a cada cigarro. Calcule")
+                    escreval("quantos dias de vida um fumante perderá e exiba o total em dias.")
+                    EscrevaTituloResultado()
+                    Exercicio16()
+                    EscrevaTituloRetornando()
+               caso "17"
+                    escreval(tituloEscolhido)
+                    escreval("17) Escreva um programa que pergunte a velocidade de um carro. Caso ultrapasse")
+                    escreval("80Km/h, exiba uma mensagem dizendo que o usuário foi multado. Nesse caso, exiba")
+                    escreval("o valor da multa, cobrando R$5 por cada Km acima da velocidade permitida.")
+                    EscrevaTituloResultado()
+                    Exercicio17()
+                    EscrevaTituloRetornando()
+               caso "18"
+                    escreval(tituloEscolhido)
+                    escreval("18) Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade")
+                    escreval("dela e depois mostre se ela pode ou não votar.")
+                    EscrevaTituloResultado()
+                    Exercicio18()
+                    EscrevaTituloRetornando()
+               caso "19"
+                    escreval(tituloEscolhido)
+                    escreval("19) Crie um algoritmo que leia o nome e as duas notas de um aluno, calcule a sua")
+                    escreval("média e mostre na tela. No final, analise a média e mostre se o aluno teve ou")
+                    escreval("não um bom aproveitamento (se ficou acima da média 7.0).")
+                    EscrevaTituloResultado()
+                    Exercicio19()
+                    EscrevaTituloRetornando()
+               caso "20"
+                    escreval(tituloEscolhido)
+                    escreval("20) Desenvolva um programa que leia um número inteiro e mostre se ele é PAR ou")
+                    escreval("ÍMPAR.")
+                    EscrevaTituloResultado()
+                    Exercicio20()
+                    EscrevaTituloRetornando()
                outrocaso
                     escreval("Número inválido, por favor tente novamente.")
                fimescolha
-      escreval("")
       ate (exercicioEscolhido = "0")
 fimalgoritmo
